@@ -36,7 +36,7 @@ ASPXI uses Microsoft 365 product usage, free Copilot usage, whitespace, agent us
 
 ### Priority score
 
-Priority Score ranks customers for Copilot Trial outreach on a 0 to 100 scale. It gives higher scores to customers with more eligible M365 seats, larger Copilot whitespace, stronger free-to-paid conversion potential, Grow or Monetize opportunity signals, and high agent intensity.
+Priority Score ranks customers for Copilot Trial outreach on a 0 to 100 scale. It gives higher scores to customers with more eligible M365 seats, larger Copilot whitespace, stronger free-to-paid conversion potential, Grow or Monetize opportunity signals, and high agent intensity. Customers marked **Not Eligible** in `Copilot 30-Day Trial Recommendation` return a blank score so they do not appear as active trial-priority accounts.
 
 Suggested scoring model:
 
@@ -134,9 +134,13 @@ VAR OpportunityScore =
 VAR AgentScore =
     IF(Sheet1[Agent Intensity] = "High", 10, 0)
 RETURN
-ROUND(
-    SeatScore + WhitespaceScore + FreeToPaidScore + OpportunityScore + AgentScore,
-    0
+IF(
+    UPPER(TRIM(Sheet1[Copilot 30-Day Trial Recommendation])) = "NOT ELIGIBLE",
+    BLANK(),
+    ROUND(
+        SeatScore + WhitespaceScore + FreeToPaidScore + OpportunityScore + AgentScore,
+        0
+    )
 )
 ```
 
@@ -148,6 +152,7 @@ Use as a calculated column:
 Priority Band =
 SWITCH(
     TRUE(),
+    ISBLANK(Sheet1[Priority Score]), BLANK(),
     Sheet1[Priority Score] >= 70, "High",
     Sheet1[Priority Score] >= 40, "Medium",
     "Low"
@@ -169,6 +174,7 @@ RANKX(
             "BP",
             "BS"
         }
+            && NOT ISBLANK(Sheet1[Priority Score])
     ),
     Sheet1[Priority Score] * 1000000000
         + Sheet1[Copilot Seats Whitespace] * 1000
