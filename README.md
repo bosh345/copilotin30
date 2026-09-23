@@ -1,6 +1,6 @@
-# Copilot for 30 Power BI Dashboard
+# Copilot in 30 Power BI Dashboard
 
-Power BI dashboard for partners using ASPXI Copilot Opportunities data to identify, prioritise, and target customers for Copilot for 30 trial motions.
+Power BI dashboard for partners using ASPXI Copilot Opportunities data to identify, prioritise, and target customers for Copilot in 30 trial motions.
 
 The report helps partners move from broad opportunity lists to a focused set of top prospects by combining Copilot eligibility, whitespace, free Copilot Chat usage, Frontier readiness, security maturity, and partner/customer routing signals.
 
@@ -8,17 +8,17 @@ The report helps partners move from broad opportunity lists to a focused set of 
 
 ### Opportunity overview
 
-![Copilot for 30 dashboard overview](assets/dashboard-overview.png)
+![Copilot in 30 dashboard overview](assets/dashboard-overview.png)
 
 ### Customer view
 
-![Copilot for 30 customer view](assets/customer-view.png)
+![Copilot in 30 customer view](assets/customer-view.png)
 
 ## What this report is for
 
 This dashboard is designed to help partners:
 
-- Identify customers who are strong candidates for Copilot for 30 trials.
+- Identify customers who are strong candidates for Copilot in 30 trials.
 - Prioritise outreach using a simple customer-level priority score.
 - Compare eligible seats, Copilot whitespace, free Copilot Chat usage, and paid adoption signals.
 - Focus seller and partner follow-up on the customers most likely to benefit from a trial.
@@ -251,10 +251,10 @@ For a single customer view, useful filters include:
 Partners can use this report to:
 
 1. Load an ASPXI Copilot Opportunities export.
-2. Identify customers with strong Copilot for 30 trial potential.
+2. Identify customers with strong Copilot in 30 trial potential.
 3. Rank accounts by opportunity size, whitespace, free usage, and conversion potential.
 4. Use the customer view to plan targeted outreach.
-5. Focus Copilot for 30 activity on the customers most likely to benefit from a trial.
+5. Focus Copilot in 30 activity on the customers most likely to benefit from a trial.
 
 ## Notes
 
